@@ -2,11 +2,14 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"aPyopticum": "00_core.ipynb",
-         "ureg": "00_core.ipynb",
-         "pc": "00_core.ipynb"}
+index = {"ureg": "00_core.ipynb",
+         "Help_system": "00_core.ipynb",
+         "POD_as_top_level_attributes": "00_core.ipynb",
+         "Sensor": "00_core.ipynb",
+         "Lens": "00_core.ipynb",
+         "aPyopticum": "00_core.ipynb"}
 
-modules = ["Pyopticum.py"]
+modules = ["core.py"]
 
 doc_url = "https://jlovick.github.io/pyopticum/"
 

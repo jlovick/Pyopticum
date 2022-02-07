@@ -13,33 +13,51 @@ This file will become your README and also the index of your documentation.
 Fill me in please! Don't forget code examples:
 
 ```python
-1+1
+import sys
+```
+
+```python
+from pyopticum.core import *
 ```
 
 
-
-
-    2
-
+Using Ipython
 
 
 ```python
-from pyopticum.Pyopticum import *
 pc = aPyopticum()
 pc.about()
 
 ```
 
 
-    ---------------------------------------------------------------------------
+    'createing help system'
 
-    AttributeError                            Traceback (most recent call last)
 
-    /tmp/ipykernel_77/782957046.py in <module>
-          1 from pyopticum.Pyopticum import *
-          2 pc = aPyopticum()
-    ----> 3 pc.about()
-    
 
-    AttributeError: 'aPyopticum' object has no attribute 'about'
+<h1>Pyopticum</h1>
+
+
+
+see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
+
+
+```python
+mysensor =  Sensor(13*ureg.mm,11*ureg.mm, 2.7*ureg.micrometer, 2.7*ureg.micrometer)
+```
+
+
+    'createing help system'
+
+
+```python
+mylens =  Lens(focal_length = 40*ureg.mm, aperture = 2.0*ureg.Aperture)
+```
+
+
+    'createing help system'
+
+
+
+40.0 millimeter
 
