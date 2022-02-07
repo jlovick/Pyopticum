@@ -38,7 +38,7 @@ class Help_system:
         pass
 
     def initialize_help_system(self):
-        print(f"createing help system")
+        #print(f"createing help system")
         self.__dict__['ureg'] = pint.UnitRegistry()
         self.__dict__['is_ipython'] = self.__is_running_under_ipython()
         if self.is_ipython:
