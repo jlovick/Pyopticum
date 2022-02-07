@@ -4,20 +4,232 @@
 from __future__ import print_function
 
 
-__all__ = ['aPyopticum']
+__all__ = ['aPyopticum', 'ureg', 'pc']
 
 # Cell
 #nbdev_comment from __future__ import print_function
+from typing import overload
 import random
+import pint
+import math
+import inspect
+
+try:
+      from IPython.display import display, Math, Latex, HTML, Markdown
+      display(HTML("Using Ipython"))
+      ascii_print = print
+      def print(*args, **kwargs):
+        for item in args:
+            display(item)
+
+except ImportError:
+      from bs4 import BeautifulSoup
+      from markdown import markdown
+      print("unable to import IPython, ignoring, using basic print")
+
+ureg = pint.UnitRegistry()
+ureg.define('Circle_of_confusion = [] = coc')
+ureg.define('Aperture = [] = fnumber')
 
 class aPyopticum:
     """
     Initial class to hold optical formula's etc
 
     """
-    def __init__(self):
-        self.data = []
+    class Sensor:
+        """
+        class to hold sensor data and methods
+        """
+        class Raw_sensor_data:
+            def __init__(self):
+                self.die_size_x = 0
+                self.die_size_y = 0
+                self.pixel_size_x = 0
+                self.pixel_size_y = 0
+                self.diagonal = 0
+                self.circle_of_confusion = 0
+                self.circle_of_confusion_method = "Modern"
 
-    def say_hello(self,to):
-        "Say hello to someone"
-        return f" hello {to}!"
+        @ureg.wraps(None, (None, 'mm','mm','micrometer','micrometer'))
+        def __init__(self, die_size_x,die_size_y, pixel_size_x,pixel_size_y):
+            self.__dict__['sensor_data'] = self.Raw_sensor_data()
+            self.sensor_data.die_size_x = die_size_x*ureg.mm
+            self.sensor_data.die_size_y = die_size_y*ureg.mm
+            self.sensor_data.diagonal = self.__diagonal()
+            self.sensor_data.pixel_size_x = 2.7 *ureg.micrometer
+            self.sensor_data.pixel_size_y = 2.7 *ureg.micrometer
+            self.sensor_data.circle_of_confusion_method = "Modern"
+            self.sensor_data.circle_of_confusion = self.__circle_of_confusion(frame_diagonal=self.diagonal, focal_length=0*ureg.mm, method=self.sensor_data.circle_of_confusion_method)
+
+        def __getattr__(self, attr):
+            attr = attr.replace("_Sensor","")
+            #print(f"getting {attr}")
+            variables = vars(self.sensor_data)
+            if attr in variables:
+                return getattr(self.sensor_data,attr)
+
+            methods = [i for i in dir(self) if not inspect.ismethod(i)]
+            print(f"{attr} --> variables :{variables} \n methods :{methods}")
+            #next check if we can calculate it
+            if ("__" + attr in methods):
+                return getattr(self,"__"+attr)()
+            else:
+                raise Exception(f"__getattr__ Cannot find Attribute :{attr} ")
+
+        def __setattr__(self, attr, value):
+            attr = attr.replace("_Sensor","")
+            variables = vars(self.sensor_data)
+            methods = [i for i in dir(self) if not inspect.ismethod(i)]
+            not_methods = [i for i in dir(self) if  inspect.ismethod(i)]
+            print(f" {attr} --> variables :{variables} \n methods :{methods}")
+            if ("_Sensor__" + attr in methods):
+                raise Exception(f"__setattr__ Attribute [ {attr} ] is not writeable ")
+
+            if attr == "sensor_data":
+                if type(value) == type(self.sensor_data):
+                    self.__dict['sensor_data'] == self.sensor_data
+                else:
+                    raise Exception(f" sensor data must be of sensor data class type")
+            #next make it look like these are top level attributes
+            if attr in variables:
+                setattr(self.sensor_data,attr,value)
+            #if this is in the right class lets let it be changed here (should never be called)
+            elif (attr in methods):
+                self.__dict__[attr] = value
+                #raise Exception(f"__setattr__ Cannot set this Attribute : {attr}")
+            #ok i give up
+            else:
+                raise Exception(f"__setattr__ Attribute [ {attr} ] is not found ")
+
+        @ureg.wraps('mm',(None))
+        def __diagonal(self):
+            return math.sqrt( math.pow(self.sensor_data.die_size_x.magnitude,2) + math.pow(self.sensor_data.die_size_y.magnitude,2) )*ureg.mm
+
+
+        def circle_of_confusion_help(self)->None:
+            print(HTML("<H2>Circle of Confusion</H2>"))
+            print(HTML("Modern, Standard Method (Default)	Frame’s diagonal / 1500"))
+            print(HTML("Zeiss, Formula	Frame’s diagonal / 1730"))
+            print(HTML("Kodak, Formula	Focal length / 1720"))
+            print(HTML("Archaic, Standard	Frame’s diagonal / 1000"))
+            print(HTML("<code> circle_confusion(frame_diagonal,focal_length,method = 'modern')</code>"))
+            return 1
+
+        def set_circle_of_confusion_method(self,method="modern"):
+            coc_method = [ "modern", "zeiss","kodak", "archaic" ]
+            if method not in coc_method:
+                raise ValueError("Circle of confusion method not supported")
+            self.sensor_data.circle_of_confusion_method = method
+            self.__circle_of_confusion(frame_diagonal=self.diagonal, focal_length=0*ureg.mm, method=self.sensor_data.circle_of_confusion_method)
+
+        @ureg.wraps(ureg.coc, (None, 'mm','mm',None))
+        def __circle_of_confusion(self,frame_diagonal, focal_length, method):
+            def modern(frame_diagonal, ignore):
+                return frame_diagonal/1500
+            def zeiss(frame_diagonal, ignore):
+                return frame_diagonal/1730
+            def kodak(ignore, focal_length):
+                return focal_length/1720
+            def archaic(frame_diagonal, ignore):
+                return focal_length/1000
+
+            coc_method = { "modern": modern,
+                          "zeiss": zeiss,
+                          "kodak": kodak,
+                          "archaic": archaic}
+            if method.lower() not in coc_method:
+                raise ValueError(f"Unknown Circle of Confusion Method {method}")
+            coc = coc_method.get(method.lower())(frame_diagonal,focal_length)
+            return coc * ureg('coc')
+
+
+    ###################################################################################################################3
+    def __init__(self, echo_params = False):
+        self.ureg = pint.UnitRegistry()
+        self.data = []
+        self.is_ipython = self.__is_running_under_ipython()
+        if self.is_ipython:
+            self.ureg.default_format = "L"
+        else:
+            self.ureg.default_format = "P"
+        self.echo_params = echo_params
+
+
+    def __is_running_under_ipython(self):
+        try:
+            get_ipython
+            return True
+        except:
+            return False
+
+    def wrap_unit(self, eqn, style):
+        if (self.is_ipython):
+            if style.lower() == "math":
+                return Math(eqn)
+            if style.lower() == "html":
+                return HTML(eqn)
+            if style.lower() == "latex":
+                return Latex(eqn)
+            if style.lower() == "markdown":
+                return Markdown(eqn)
+        else:
+            if style.lower() == "html":
+                soup = BeautifulSoup(eqn)
+                return soup.get_text()
+            if style.lower() == "markdown":
+                html = markdown(eqn)
+                soup = BeautifulSoup(html, features='html.parser')
+                return soup.get_text()
+        return eqnprint
+
+    def about(self):
+        """
+        about this library and usage
+        """
+        print(self.wrap_unit("<h1>Pyopticum</h1>","html"))
+        print(self.wrap_unit("see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source","html"))
+
+    def help(self, command):
+        """
+        runs the help function for the command
+        """
+        method_to_call = getattr(self, command+'_help')
+        result = method_to_call()
+
+    def angle_of_view_help(self):
+        print(HTML("<h2>Angle of view</h2>"))
+        print(HTML("<span>Figures out the witdh of the angle of view, given sensor / lens characteristics.</span>"))
+        print(self.wrap_unit(r"\theta=2\cdot\arctan\left(\frac{h(s-f)}{2sf}\right)","math"))
+        print(HTML("<code> angle_of_view(frame_dimension, focal_length, focus_distance)</code>"))
+
+    @ureg.wraps(ureg.radians, (None, 'mm','mm','mm' ))
+    def angle_of_view(self, frame_dimension, focal_length, focus_distance):
+        if self.echo_params:
+            print(HTML(f"<code>Frame Dimension {frame_dimension} </br>Focal Length {focal_length}</br>Focus Distance {focus_distance}</code>"))
+        aov = 2.0 * math.atan((frame_dimension * (focus_distance - focal_length))/(2*focus_distance*focal_length))
+        if self.echo_params:
+            print(HTML(f"<span>Angle of View :{aov}"))
+        return aov
+
+    def field_of_view_help(self):
+        print(self.wrap_unit("<h2>Field of View</h2>","html"))
+        print(self.wrap_unit("<a> implementation of this equation </a>","html"))
+        print(self.wrap_unit(r'w=2s\cdot\tan\left(\frac{\theta}{2}\right)',"Math"))
+
+    @ureg.wraps(ureg.meters, (None, 'm', 'rad') )
+    def field_of_view(self, focus_distance, angle_of_view):
+        view_width = 2*focus_distance*math.tan( angle_of_view / 2.0)
+        return view_width
+
+    def hyperfocal_distance_help(self):
+        print(HTML("<H2>Hyperfocal Distance</H2>"))
+        print(HTML("<span> calculates hyperfocal distance"))
+        print(self.wrap_unit(r"H=\frac{f^{2}}{N\cdot{c}}+f","Math"))
+
+    @ureg.wraps(ureg.meters, (None, 'mm','fnumber','coc'))
+    def hyperfocal_distance(self, focal_length, f_number, circle_of_confusion):
+        hfd = (focal_length*focal_length)/(f_number*circle_of_confusion)+focal_length
+        return hfd
+
+
+pc = aPyopticum(echo_params = False)

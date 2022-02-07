@@ -2,7 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"aPyopticum": "00_core.ipynb"}
+index = {"aPyopticum": "00_core.ipynb",
+         "ureg": "00_core.ipynb",
+         "pc": "00_core.ipynb"}
 
 modules = ["Pyopticum.py"]
 

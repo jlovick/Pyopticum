@@ -12,7 +12,7 @@ This file will become your README and also the index of your documentation.
 
 Fill me in please! Don't forget code examples:
 
-```
+```python
 1+1
 ```
 
@@ -23,15 +23,23 @@ Fill me in please! Don't forget code examples:
 
 
 
-```
+```python
 from pyopticum.Pyopticum import *
 pc = aPyopticum()
-pc.say_hello("joe")
+pc.about()
+
 ```
 
 
+    ---------------------------------------------------------------------------
 
+    AttributeError                            Traceback (most recent call last)
 
-    ' hello joe!'
+    /tmp/ipykernel_77/782957046.py in <module>
+          1 from pyopticum.Pyopticum import *
+          2 pc = aPyopticum()
+    ----> 3 pc.about()
+    
 
+    AttributeError: 'aPyopticum' object has no attribute 'about'
 
