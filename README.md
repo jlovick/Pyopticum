@@ -22,12 +22,8 @@ import sys
 ```
 
 ```python
-from pyopticum.core import *
+from pyopticum import *
 ```
-
-
-Using Ipython
-
 
 ```python
 pc = aPyopticum()

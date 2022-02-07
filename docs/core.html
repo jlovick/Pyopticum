@@ -289,16 +289,6 @@ Converted index.ipynb.
 <div class="output_area">
 
 
-
-<div class="output_text output_subarea ">
-<pre>&#39;createing help system&#39;</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea ">
 <h1>Pyopticum</h1>
 </div>
@@ -314,117 +304,6 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 
 </div>
 
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<h1>Pyopticum</h1>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/xpython_7113/3840943149.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> pc <span class="ansi-blue-fg">=</span> aPyopticum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> pc<span class="ansi-blue-fg">.</span>about<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>test_eq<span class="ansi-blue-fg">(</span>pc<span class="ansi-blue-fg">.</span>about<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#34;creating help system&#34;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.8/site-packages/fastcore/test.py</span> in <span class="ansi-cyan-fg">test_eq</span><span class="ansi-blue-fg">(a, b)</span>
-<span class="ansi-green-intense-fg ansi-bold">     34</span> <span class="ansi-green-fg">def</span> test_eq<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span>b<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     35</span>     <span class="ansi-blue-fg">&#34;`test` that `a==b`&#34;</span>
-<span class="ansi-green-fg">---&gt; 36</span><span class="ansi-red-fg">     </span>test<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span>b<span class="ansi-blue-fg">,</span>equals<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;==&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     37</span> 
-<span class="ansi-green-intense-fg ansi-bold">     38</span> <span class="ansi-red-fg"># Cell</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.8/site-packages/fastcore/test.py</span> in <span class="ansi-cyan-fg">test</span><span class="ansi-blue-fg">(a, b, cmp, cname)</span>
-<span class="ansi-green-intense-fg ansi-bold">     24</span>     <span class="ansi-blue-fg">&#34;`assert` that `cmp(a,b)`; display inputs and `cname or cmp.__name__` if it fails&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">     25</span>     <span class="ansi-green-fg">if</span> cname <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span> cname<span class="ansi-blue-fg">=</span>cmp<span class="ansi-blue-fg">.</span>__name__
-<span class="ansi-green-fg">---&gt; 26</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">assert</span> cmp<span class="ansi-blue-fg">(</span>a<span class="ansi-blue-fg">,</span>b<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">f&#34;{cname}:\n{a}\n{b}&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">     27</span> 
-<span class="ansi-green-intense-fg ansi-bold">     28</span> <span class="ansi-red-fg"># Cell</span>
-
-<span class="ansi-red-fg">AssertionError</span>: ==:
-None
-creating help system</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fdimension</span> <span class="o">=</span> <span class="mi">15</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span>
-<span class="n">flength</span> <span class="o">=</span> <span class="mi">40</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span>
-<span class="n">fdistance</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">m</span>
-<span class="n">aov</span> <span class="o">=</span> <span class="o">.</span><span class="n">angle_of_view</span><span class="p">(</span><span class="n">fdimension</span><span class="p">,</span><span class="n">flength</span><span class="p">,</span><span class="n">fdistance</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Angle of View </span><span class="si">{</span><span class="n">aov</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;degrees&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/xpython_3552/2765970246.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> flength <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">40</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>mm
-<span class="ansi-green-intense-fg ansi-bold">      3</span> fdistance <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>m
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>aov <span class="ansi-blue-fg">=</span> pc<span class="ansi-blue-fg">.</span>angle_of_view<span class="ansi-blue-fg">(</span>fdimension<span class="ansi-blue-fg">,</span>flength<span class="ansi-blue-fg">,</span>fdistance<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;Angle of View {aov.to(&#39;degrees&#39;)}&#34;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;aPyopticum&#39; object has no attribute &#39;angle_of_view&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">height</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">meter</span>
-<span class="n">fov</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">field_of_view</span><span class="p">(</span> <span class="n">height</span><span class="p">,</span> <span class="n">aov</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;field of view : </span><span class="si">{</span><span class="n">fov</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -450,29 +329,44 @@ creating help system</pre>
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/xpython_7113/3483064882.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mylens <span class="ansi-blue-fg">=</span> Lens<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">40</span> <span class="ansi-blue-fg">*</span> ureg<span class="ansi-blue-fg">.</span>mm<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">2.4</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>Aperture<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">/opt/conda/lib/python3.8/site-packages/pint/registry_helpers.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-fg">(*values, **kw)</span>
-<span class="ansi-green-intense-fg ansi-bold">    277</span>             <span class="ansi-red-fg"># In principle, the values are used as is</span>
-<span class="ansi-green-intense-fg ansi-bold">    278</span>             <span class="ansi-red-fg"># When then extract the magnitudes when needed.</span>
-<span class="ansi-green-fg">--&gt; 279</span><span class="ansi-red-fg">             </span>new_values<span class="ansi-blue-fg">,</span> values_by_name <span class="ansi-blue-fg">=</span> converter<span class="ansi-blue-fg">(</span>ureg<span class="ansi-blue-fg">,</span> values<span class="ansi-blue-fg">,</span> strict<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    280</span> 
-<span class="ansi-green-intense-fg ansi-bold">    281</span>             result <span class="ansi-blue-fg">=</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>new_values<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kw<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.8/site-packages/pint/registry_helpers.py</span> in <span class="ansi-cyan-fg">_converter</span><span class="ansi-blue-fg">(ureg, values, strict)</span>
-<span class="ansi-green-intense-fg ansi-bold">    156</span>                         )
-<span class="ansi-green-intense-fg ansi-bold">    157</span>                     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 158</span><span class="ansi-red-fg">                         raise ValueError(
-</span><span class="ansi-green-intense-fg ansi-bold">    159</span>                             <span class="ansi-blue-fg">&#34;A wrapped function using strict=True requires &#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    160</span>                             <span class="ansi-blue-fg">&#34;quantity or a string for all arguments with not None units. &#34;</span>
-
-<span class="ansi-red-fg">ValueError</span>: A wrapped function using strict=True requires quantity or a string for all arguments with not None units. (error found for mm, 40 millimeter)</pre>
+<div class="output_html rendered_html output_subarea ">
+40.0 millimeter
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylens</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;__main__.Lens at 0x7f22f898f0a0&gt;</pre>
+</div>
+
 </div>
 
 </div>
@@ -500,15 +394,11 @@ creating help system</pre>
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/xpython_7113/2376338725.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mylens<span class="ansi-blue-fg">.</span>focal_length
 
-<span class="ansi-red-fg">NameError</span>: name &#39;mylens&#39; is not defined</pre>
+<div class="output_html rendered_html output_subarea output_execute_result">
+40.0 millimeter
 </div>
+
 </div>
 
 </div>
@@ -525,7 +415,6 @@ creating help system</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
-<span class="n">mysensor</span><span class="o">.</span><span class="n">set_circle_of_confusion_method</span><span class="p">(</span><span class="s2">&quot;archaic&quot;</span><span class="p">,</span><span class="n">focal_length</span><span class="o">=</span><span class="n">mylens</span><span class="p">)</span>
 <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span>
 </pre></div>
 
@@ -539,43 +428,10 @@ creating help system</pre>
 <div class="output_area">
 
 
-
-<div class="output_text output_subarea ">
-<pre>&#39;createing help system&#39;</pre>
+<div class="output_html rendered_html output_subarea output_execute_result">
+0.011352924243950934 Circle_of_confusion
 </div>
 
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#39;got a lens object&#39;</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/xpython_3552/2963947240.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> mysensor <span class="ansi-blue-fg">=</span> Sensor<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">13</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>mm<span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">11</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>mm<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2.7</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>micrometer<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2.7</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>micrometer<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>mysensor<span class="ansi-blue-fg">.</span>set_circle_of_confusion_method<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;archaic&#34;</span><span class="ansi-blue-fg">,</span>focal_length<span class="ansi-blue-fg">=</span>mylens<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> mysensor<span class="ansi-blue-fg">.</span>circle_of_confusion
-
-<span class="ansi-green-fg">/tmp/xpython_3552/1288953083.py</span> in <span class="ansi-cyan-fg">set_circle_of_confusion_method</span><span class="ansi-blue-fg">(self, method, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     71</span>         <span class="ansi-red-fg">#ok if were still dont have something valid raise an error</span>
-<span class="ansi-green-intense-fg ansi-bold">     72</span>         <span class="ansi-green-fg">if</span> focal_length  <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 73</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Focal Length must be specified and greater than 0&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     74</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;focal length is {focal_length} {type(focal_length)}&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     75</span>         self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>__circle_of_confusion<span class="ansi-blue-fg">(</span>frame_diagonal<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>diagonal<span class="ansi-blue-fg">,</span> focal_length<span class="ansi-blue-fg">=</span>focal_length<span class="ansi-blue-fg">,</span> method<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion_method<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ValueError</span>: Focal Length must be specified and greater than 0</pre>
-</div>
 </div>
 
 </div>
@@ -598,20 +454,18 @@ creating help system</pre>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+17.029386365926403 millimeter
 </div>
-    {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+</div>
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mysensor</span><span class="o">.</span><span class="n">diagonal</span> <span class="o">=</span> <span class="mi">12</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -625,24 +479,7 @@ creating help system</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mysensor</span><span class="o">.</span><span class="n">set_circle_of_confusion_method</span><span class="p">(</span><span class="s2">&quot;archaic&quot;</span><span class="p">,</span><span class="n">mylens</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mysensor</span><span class="o">.</span><span class="n">set_circle_of_confusion_method</span><span class="p">(</span><span class="s2">&quot;kodak&quot;</span><span class="p">)</span>
 <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span>
 </pre></div>
 
@@ -650,20 +487,30 @@ creating help system</pre>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/xpython_7113/1084845503.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mysensor<span class="ansi-blue-fg">.</span>set_circle_of_confusion_method<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;kodak&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> mysensor<span class="ansi-blue-fg">.</span>circle_of_confusion
+
+<span class="ansi-green-fg">/tmp/xpython_7113/3946655758.py</span> in <span class="ansi-cyan-fg">set_circle_of_confusion_method</span><span class="ansi-blue-fg">(self, method, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     72</span>         <span class="ansi-red-fg">#ok if were still dont have something valid raise an error</span>
+<span class="ansi-green-intense-fg ansi-bold">     73</span>         <span class="ansi-green-fg">if</span> focal_length  <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 74</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Focal Length must be specified and greater than 0&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     75</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;focal length is {focal_length} {type(focal_length)}&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     76</span>         self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>__circle_of_confusion<span class="ansi-blue-fg">(</span>frame_diagonal<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>diagonal<span class="ansi-blue-fg">,</span> focal_length<span class="ansi-blue-fg">=</span>focal_length<span class="ansi-blue-fg">,</span> method<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion_method<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: Focal Length must be specified and greater than 0</pre>
 </div>
-    {% endraw %}
+</div>
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">Lens</span><span class="p">)</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -684,20 +531,19 @@ creating help system</pre>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;__main__.Sensor.Raw_sensor_data at 0x7f22f7fff790&gt;</pre>
 </div>
-    {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+</div>
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mysensor</span><span class="o">.</span><span class="n">sensor_data</span> <span class="o">=</span> <span class="mi">12</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -715,6 +561,32 @@ creating help system</pre>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/xpython_7113/3717574266.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mysensor<span class="ansi-blue-fg">.</span>set_circle_of_confusion_method<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;zeiss&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/tmp/xpython_7113/3946655758.py</span> in <span class="ansi-cyan-fg">set_circle_of_confusion_method</span><span class="ansi-blue-fg">(self, method, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     72</span>         <span class="ansi-red-fg">#ok if were still dont have something valid raise an error</span>
+<span class="ansi-green-intense-fg ansi-bold">     73</span>         <span class="ansi-green-fg">if</span> focal_length  <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 74</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Focal Length must be specified and greater than 0&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     75</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;focal length is {focal_length} {type(focal_length)}&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     76</span>         self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>__circle_of_confusion<span class="ansi-blue-fg">(</span>frame_diagonal<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>diagonal<span class="ansi-blue-fg">,</span> focal_length<span class="ansi-blue-fg">=</span>focal_length<span class="ansi-blue-fg">,</span> method<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion_method<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: Focal Length must be specified and greater than 0</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -736,6 +608,21 @@ creating help system</pre>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+0.011352924243950934 Circle_of_confusion
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -750,21 +637,6 @@ creating help system</pre>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Converted 00_core.ipynb.
-Converted index.ipynb.
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 

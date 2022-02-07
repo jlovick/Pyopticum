@@ -95,7 +95,7 @@ class POD_as_top_level_attributes:
             return getattr(self.__dict__[self.__dict__['pod_name']],attr)
 
         methods = [i for i in dir(self) if not inspect.ismethod(i)]
-        print(f"getattr --> {attr} --> variables :{variables} \n methods :{methods}")
+        #print(f"getattr --> {attr} --> variables :{variables} \n methods :{methods}")
         #next check if we can calculate it
         if ("__" + attr in methods):
             return getattr(self,"__"+attr)()
