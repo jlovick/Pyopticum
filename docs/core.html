@@ -500,14 +500,28 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mysensor<span class="ansi-blue-fg">.</span>set_circle_of_confusion_method<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;kodak&#34;</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> mysensor<span class="ansi-blue-fg">.</span>circle_of_confusion
 
-<span class="ansi-green-fg">/tmp/xpython_7113/3946655758.py</span> in <span class="ansi-cyan-fg">set_circle_of_confusion_method</span><span class="ansi-blue-fg">(self, method, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     72</span>         <span class="ansi-red-fg">#ok if were still dont have something valid raise an error</span>
-<span class="ansi-green-intense-fg ansi-bold">     73</span>         <span class="ansi-green-fg">if</span> focal_length  <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 74</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Focal Length must be specified and greater than 0&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     75</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;focal length is {focal_length} {type(focal_length)}&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     76</span>         self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>__circle_of_confusion<span class="ansi-blue-fg">(</span>frame_diagonal<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>diagonal<span class="ansi-blue-fg">,</span> focal_length<span class="ansi-blue-fg">=</span>focal_length<span class="ansi-blue-fg">,</span> method<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion_method<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">/tmp/xpython_7113/3400439861.py</span> in <span class="ansi-cyan-fg">set_circle_of_confusion_method</span><span class="ansi-blue-fg">(self, method, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     74</span>                 <span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Focal Length must be specified and greater than 0&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     75</span>             print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;focal length used is:{focal_length}&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 76</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>__circle_of_confusion<span class="ansi-blue-fg">(</span>frame_diagonal<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>diagonal<span class="ansi-blue-fg">,</span> focal_length<span class="ansi-blue-fg">=</span>focal_length<span class="ansi-blue-fg">,</span> method<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion_method<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     77</span> 
+<span class="ansi-green-intense-fg ansi-bold">     78</span>     <span class="ansi-blue-fg">@</span>ureg<span class="ansi-blue-fg">.</span>wraps<span class="ansi-blue-fg">(</span>ureg<span class="ansi-blue-fg">.</span>coc<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;mm&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;mm&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">ValueError</span>: Focal Length must be specified and greater than 0</pre>
+<span class="ansi-green-fg">/opt/conda/lib/python3.8/site-packages/pint/registry_helpers.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-fg">(*values, **kw)</span>
+<span class="ansi-green-intense-fg ansi-bold">    277</span>             <span class="ansi-red-fg"># In principle, the values are used as is</span>
+<span class="ansi-green-intense-fg ansi-bold">    278</span>             <span class="ansi-red-fg"># When then extract the magnitudes when needed.</span>
+<span class="ansi-green-fg">--&gt; 279</span><span class="ansi-red-fg">             </span>new_values<span class="ansi-blue-fg">,</span> values_by_name <span class="ansi-blue-fg">=</span> converter<span class="ansi-blue-fg">(</span>ureg<span class="ansi-blue-fg">,</span> values<span class="ansi-blue-fg">,</span> strict<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    280</span> 
+<span class="ansi-green-intense-fg ansi-bold">    281</span>             result <span class="ansi-blue-fg">=</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>new_values<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kw<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/opt/conda/lib/python3.8/site-packages/pint/registry_helpers.py</span> in <span class="ansi-cyan-fg">_converter</span><span class="ansi-blue-fg">(ureg, values, strict)</span>
+<span class="ansi-green-intense-fg ansi-bold">    156</span>                         )
+<span class="ansi-green-intense-fg ansi-bold">    157</span>                     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 158</span><span class="ansi-red-fg">                         raise ValueError(
+</span><span class="ansi-green-intense-fg ansi-bold">    159</span>                             <span class="ansi-blue-fg">&#34;A wrapped function using strict=True requires &#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    160</span>                             <span class="ansi-blue-fg">&#34;quantity or a string for all arguments with not None units. &#34;</span>
+
+<span class="ansi-red-fg">ValueError</span>: A wrapped function using strict=True requires quantity or a string for all arguments with not None units. (error found for mm, None)</pre>
 </div>
 </div>
 
