@@ -12,7 +12,6 @@ import pint
 import math
 import inspect
 import os
-import unittest
 import pytest
 import ipytest
 ipytest.autoconfig()
