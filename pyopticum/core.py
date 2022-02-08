@@ -6,10 +6,17 @@ __all__ = ['ureg', 'Help_system', 'POD_as_top_level_attributes', 'Sensor', 'Lens
 #nbdev_comment from __future__ import print_function
 from typing import overload
 import random
+
 import pint
+
 import math
 import inspect
 import os
+import unittest
+import pytest
+import ipytest
+ipytest.autoconfig()
+
 
 try:
       from IPython.display import display, Math, Latex, HTML, Markdown
@@ -198,10 +205,13 @@ class Sensor(POD_as_top_level_attributes, Help_system):
                         focal_length = in_arg
                     elif isinstance(in_arg, (int, float, long)):
                         focal_length = in_arg*ureg.mm
-        #ok if were still dont have something valid raise an error
-        if focal_length  is None:
-            raise ValueError("Focal Length must be specified and greater than 0")
-        print(f"focal length is {focal_length} {type(focal_length)}")
+            #ok if were still dont have something valid raise an error
+            if focal_length  is None:
+                raise ValueError("Focal Length must be specified and greater than 0")
+            print(f"focal length used is:{focal_length}")
+        if focal_length is None:
+            #at this point just ignore focal lenght
+            focal_length = 0.0*ureg.mm
         self.sensor_data.circle_of_confusion = self.__circle_of_confusion(frame_diagonal=self.diagonal, focal_length=focal_length, method=self.sensor_data.circle_of_confusion_method)
 
     @ureg.wraps(ureg.coc, (None, 'mm','mm',None))
