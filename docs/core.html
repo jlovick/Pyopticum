@@ -183,7 +183,7 @@ Using Ipython
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Lens" class="doc_header"><code>class</code> <code>Lens</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L233" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Lens</code>(<strong><code>focal_length</code></strong>, <strong><code>aperture</code></strong>) :: <a href="/pyopticum/core.html#POD_as_top_level_attributes"><code>POD_as_top_level_attributes</code></a></p>
+<h2 id="Lens" class="doc_header"><code>class</code> <code>Lens</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L230" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Lens</code>(<strong><code>focal_length</code></strong>, <strong><code>aperture</code></strong>) :: <a href="/pyopticum/core.html#POD_as_top_level_attributes"><code>POD_as_top_level_attributes</code></a></p>
 </blockquote>
 
 </div>
@@ -214,7 +214,7 @@ Using Ipython
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="aPyopticum" class="doc_header"><code>class</code> <code>aPyopticum</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L297" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>aPyopticum</code>(<strong><code>echo_params</code></strong>=<em><code>False</code></em>) :: <a href="/pyopticum/core.html#Help_system"><code>Help_system</code></a></p>
+<h2 id="aPyopticum" class="doc_header"><code>class</code> <code>aPyopticum</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L294" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>aPyopticum</code>(<strong><code>echo_params</code></strong>=<em><code>False</code></em>) :: <a href="/pyopticum/core.html#Help_system"><code>Help_system</code></a></p>
 </blockquote>
 <p>Initial class to hold optical formula's etc</p>
 
@@ -479,7 +479,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mysensor</span><span class="o">.</span><span class="n">set_circle_of_confusion_method</span><span class="p">(</span><span class="s2">&quot;zeiss&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mysensor</span><span class="o">.</span><span class="n">set_circle_of_confusion_method</span><span class="p">(</span><span class="s2">&quot;kodak&quot;</span><span class="p">)</span>
 <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span>
 </pre></div>
 
@@ -492,11 +492,23 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/xpython_7113/1084845503.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mysensor<span class="ansi-blue-fg">.</span>set_circle_of_confusion_method<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;kodak&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> mysensor<span class="ansi-blue-fg">.</span>circle_of_confusion
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-0.009843575934061504 Circle_of_confusion
+<span class="ansi-green-fg">/tmp/xpython_7113/3946655758.py</span> in <span class="ansi-cyan-fg">set_circle_of_confusion_method</span><span class="ansi-blue-fg">(self, method, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     72</span>         <span class="ansi-red-fg">#ok if were still dont have something valid raise an error</span>
+<span class="ansi-green-intense-fg ansi-bold">     73</span>         <span class="ansi-green-fg">if</span> focal_length  <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 74</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Focal Length must be specified and greater than 0&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     75</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;focal length is {focal_length} {type(focal_length)}&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     76</span>         self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>__circle_of_confusion<span class="ansi-blue-fg">(</span>frame_diagonal<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>diagonal<span class="ansi-blue-fg">,</span> focal_length<span class="ansi-blue-fg">=</span>focal_length<span class="ansi-blue-fg">,</span> method<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion_method<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: Focal Length must be specified and greater than 0</pre>
 </div>
-
 </div>
 
 </div>
@@ -527,7 +539,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;__main__.Sensor.Raw_sensor_data at 0x7f22f8b2c3a0&gt;</pre>
+<pre>&lt;__main__.Sensor.Raw_sensor_data at 0x7f22f7fff790&gt;</pre>
 </div>
 
 </div>
@@ -549,6 +561,32 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/xpython_7113/3717574266.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>mysensor<span class="ansi-blue-fg">.</span>set_circle_of_confusion_method<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;zeiss&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/tmp/xpython_7113/3946655758.py</span> in <span class="ansi-cyan-fg">set_circle_of_confusion_method</span><span class="ansi-blue-fg">(self, method, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     72</span>         <span class="ansi-red-fg">#ok if were still dont have something valid raise an error</span>
+<span class="ansi-green-intense-fg ansi-bold">     73</span>         <span class="ansi-green-fg">if</span> focal_length  <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 74</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Focal Length must be specified and greater than 0&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     75</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;focal length is {focal_length} {type(focal_length)}&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     76</span>         self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>__circle_of_confusion<span class="ansi-blue-fg">(</span>frame_diagonal<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>diagonal<span class="ansi-blue-fg">,</span> focal_length<span class="ansi-blue-fg">=</span>focal_length<span class="ansi-blue-fg">,</span> method<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>sensor_data<span class="ansi-blue-fg">.</span>circle_of_confusion_method<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: Focal Length must be specified and greater than 0</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -577,7 +615,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-0.009843575934061504 Circle_of_confusion
+0.011352924243950934 Circle_of_confusion
 </div>
 
 </div>
