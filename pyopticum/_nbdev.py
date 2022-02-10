@@ -4,9 +4,9 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"ureg": "00_core.ipynb",
          "Help_system": "00_core.ipynb",
-         "POD_as_top_level_attributes": "00_core.ipynb",
-         "Sensor": "00_core.ipynb",
          "Lens": "00_core.ipynb",
+         "Sensor": "00_core.ipynb",
+         "Camera": "00_core.ipynb",
          "aPyopticum": "00_core.ipynb"}
 
 modules = ["core.py"]

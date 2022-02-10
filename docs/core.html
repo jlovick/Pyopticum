@@ -89,7 +89,7 @@ Using Ipython
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Help_system" class="doc_header"><code>class</code> <code>Help_system</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L43" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Help_system</code>()</p>
+<h2 id="Help_system" class="doc_header"><code>class</code> <code>Help_system</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L45" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Help_system</code>()</p>
 </blockquote>
 
 </div>
@@ -120,7 +120,7 @@ Using Ipython
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="POD_as_top_level_attributes" class="doc_header"><code>class</code> <code>POD_as_top_level_attributes</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L91" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>POD_as_top_level_attributes</code>()</p>
+<h2 id="Lens" class="doc_header"><code>class</code> <code>Lens</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L100" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Lens</code>(<strong><code>focal_length</code></strong>=<em><code>&lt;Quantity(40, 'millimeter')&gt;</code></em>, <strong><code>aperture</code></strong>=<em><code>&lt;Quantity(2.0, 'Aperture')&gt;</code></em>, <strong><code>focus_distance</code></strong>=<em><code>&lt;Quantity(7.0, 'meter')&gt;</code></em>) :: <a href="/pyopticum/core.html#Help_system"><code>Help_system</code></a></p>
 </blockquote>
 
 </div>
@@ -151,7 +151,7 @@ Using Ipython
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Sensor" class="doc_header"><code>class</code> <code>Sensor</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L138" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Sensor</code>(<strong><code>die_size_x</code></strong>, <strong><code>die_size_y</code></strong>, <strong><code>pixel_size_x</code></strong>, <strong><code>pixel_size_y</code></strong>) :: <a href="/pyopticum/core.html#POD_as_top_level_attributes"><code>POD_as_top_level_attributes</code></a></p>
+<h2 id="Sensor" class="doc_header"><code>class</code> <code>Sensor</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L172" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Sensor</code>(<strong><code>die_size_x</code></strong>, <strong><code>die_size_y</code></strong>, <strong><code>pixel_size_x</code></strong>, <strong><code>pixel_size_y</code></strong>) :: <a href="/pyopticum/core.html#Help_system"><code>Help_system</code></a></p>
 </blockquote>
 <p>class to hold sensor data and methods</p>
 
@@ -183,7 +183,7 @@ Using Ipython
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Lens" class="doc_header"><code>class</code> <code>Lens</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L240" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Lens</code>(<strong><code>focal_length</code></strong>, <strong><code>aperture</code></strong>) :: <a href="/pyopticum/core.html#POD_as_top_level_attributes"><code>POD_as_top_level_attributes</code></a></p>
+<h2 id="Camera" class="doc_header"><code>class</code> <code>Camera</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L375" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Camera</code>(<strong><code>sensor</code></strong>:<a href="/pyopticum/core.html#Sensor"><code>Sensor</code></a>, <strong><code>lens</code></strong>:<a href="/pyopticum/core.html#Lens"><code>Lens</code></a>) :: <a href="/pyopticum/core.html#Help_system"><code>Help_system</code></a></p>
 </blockquote>
 
 </div>
@@ -214,7 +214,7 @@ Using Ipython
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="aPyopticum" class="doc_header"><code>class</code> <code>aPyopticum</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L304" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>aPyopticum</code>(<strong><code>echo_params</code></strong>=<em><code>False</code></em>) :: <a href="/pyopticum/core.html#Help_system"><code>Help_system</code></a></p>
+<h2 id="aPyopticum" class="doc_header"><code>class</code> <code>aPyopticum</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L442" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>aPyopticum</code>(<strong><code>echo_params</code></strong>=<em><code>False</code></em>) :: <a href="/pyopticum/core.html#Help_system"><code>Help_system</code></a></p>
 </blockquote>
 <p>Initial class to hold optical formula's etc</p>
 
@@ -317,6 +317,62 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_sensor_is_behaving</span><span class="p">():</span>
+    <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
+    <span class="n">da</span> <span class="o">=</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">diagonal</span> 
+    <span class="n">mysensor</span><span class="o">.</span><span class="n">die_size</span>  <span class="o">=</span> <span class="p">(</span> <span class="mi">12</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span>  <span class="mi">44</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">diagonal</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">die_size</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">da</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">db</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_sensor_is_behaving</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;(&lt;Quantity(12, &#39;millimeter&#39;)&gt;, &lt;Quantity(44, &#39;millimeter&#39;)&gt;) 17.029386365926403 millimeter --&gt; 45.60701700396552 millimeter&#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_can_create_lens</span><span class="p">():</span>
     <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">((</span><span class="mi">40</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span> <span class="p">,(</span><span class="mf">2.4</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">))</span>
 </pre></div>
@@ -391,12 +447,68 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_cicle_of_confusion_default</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_sensor_diagonal</span><span class="p">():</span>
     <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span> <span class="o">==</span> <span class="p">(</span><span class="mf">0.011352924243950934</span><span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">Circle_of_confusion</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;die size = </span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">die_size</span><span class="si">}</span><span class="se">\n</span><span class="s2"> cell size = </span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">pixel_size</span><span class="si">}</span><span class="s2">  &quot;</span><span class="p">)</span>
+    
+    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">diagonal</span> <span class="o">==</span> <span class="mf">17.029386365926403</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span>
+<span class="n">test_sensor_diagonal</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;die size = (&lt;Quantity(13.0, &#39;millimeter&#39;)&gt;, &lt;Quantity(11.0, &#39;millimeter&#39;)&gt;)\n cell size = (&lt;Quantity(2.7, &#39;micrometer&#39;)&gt;, &lt;Quantity(2.7, &#39;micrometer&#39;)&gt;)  &#34;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_circle_of_confusion_default</span><span class="p">():</span>
+    <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span> <span class="o">==</span> <span class="p">(</span><span class="mf">0.011352924243950934</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">Circle_of_confusion</span><span class="p">)</span>
+    
+<span class="n">test_circle_of_confusion_default</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+0.011352924243950934 Circle_of_confusion
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -412,31 +524,31 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_archaic_circle_of_confusion</span><span class="p">():</span>
     <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
-    <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">((</span><span class="mi">40</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span> <span class="p">,(</span><span class="mf">2.4</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">))</span>
-    <span class="n">mysensor</span><span class="o">.</span><span class="n">set_circle_of_confusion_method</span><span class="p">(</span><span class="s2">&quot;archaic&quot;</span><span class="p">,</span> <span class="n">mylens</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span> <span class="o">==</span> <span class="mf">0.04</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Circle_of_confusion</span>
+    <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">((</span><span class="mi">40</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span> <span class="p">,(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">))</span>
+    <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion_method</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;archaic&quot;</span><span class="p">,</span> <span class="n">mylens</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; archaic coc = </span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span> <span class="o">==</span> <span class="mf">0.017029386365926404</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Circle_of_confusion</span>
+
+<span class="n">test_archaic_circle_of_confusion</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#39; archaic coc = 0.017029386365926404 Circle_of_confusion&#39;</pre>
 </div>
-    {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+</div>
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_sensor_diagonal</span><span class="p">():</span>
-    <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">diagonal</span> <span class="o">==</span> <span class="mf">17.029386365926403</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -452,11 +564,174 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_zeiss_circle_of_confusion</span><span class="p">():</span>
     <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
-    <span class="n">mysensor</span><span class="o">.</span><span class="n">set_circle_of_confusion_method</span><span class="p">(</span><span class="s2">&quot;zeiss&quot;</span><span class="p">)</span>
+    <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion_method</span> <span class="o">=</span> <span class="s2">&quot;zeiss&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; zeiss coc = </span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span> <span class="o">==</span> <span class="mf">0.009843575934061504</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Circle_of_confusion</span>
+<span class="n">test_zeiss_circle_of_confusion</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#39; zeiss coc = 0.009843575934061504 Circle_of_confusion&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_can_create_camera</span><span class="p">():</span>
+    <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">)</span>
+    <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
+    <span class="n">mycamera</span> <span class="o">=</span> <span class="n">Camera</span><span class="p">(</span><span class="n">sensor</span> <span class="o">=</span> <span class="n">mysensor</span><span class="p">,</span> <span class="n">lens</span> <span class="o">=</span> <span class="n">mylens</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_camera_angle_of_view_help</span><span class="p">():</span>
+    <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">)</span>
+    <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
+    <span class="n">mycamera</span> <span class="o">=</span> <span class="n">Camera</span><span class="p">(</span><span class="n">sensor</span> <span class="o">=</span> <span class="n">mysensor</span><span class="p">,</span> <span class="n">lens</span> <span class="o">=</span> <span class="n">mylens</span><span class="p">)</span>
+    <span class="n">mycamera</span><span class="o">.</span><span class="n">angle_of_view_help</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_camera_angle_of_view</span><span class="p">():</span>
+    <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">)</span>
+    <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
+    <span class="n">mycamera</span> <span class="o">=</span> <span class="n">Camera</span><span class="p">(</span><span class="n">sensor</span> <span class="o">=</span> <span class="n">mysensor</span><span class="p">,</span> <span class="n">lens</span> <span class="o">=</span> <span class="n">mylens</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">horizontal_aov</span><span class="p">,</span><span class="n">vertical_aov</span><span class="p">)</span> <span class="o">=</span>  <span class="n">mycamera</span><span class="o">.</span><span class="n">angle_of_view</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">horizontal_aov</span><span class="p">,</span> <span class="mf">0.32037417920340566</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">radians</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abs_tol</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">vertical_aov</span><span class="p">,</span> <span class="mf">0.27174389171340224</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">radians</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span><span class="n">abs_tol</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">horizontal_aov</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">vertical_aov</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_camera_field_of_view</span><span class="p">():</span>
+    <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">)</span>
+    <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
+    <span class="n">mycamera</span> <span class="o">=</span> <span class="n">Camera</span><span class="p">(</span><span class="n">sensor</span> <span class="o">=</span> <span class="n">mysensor</span><span class="p">,</span> <span class="n">lens</span> <span class="o">=</span> <span class="n">mylens</span><span class="p">)</span>
+    <span class="n">fov</span> <span class="o">=</span> <span class="n">mycamera</span><span class="o">.</span><span class="n">field_of_view</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fov</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">fov</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2262</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">m</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">0.0</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">m</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">fov</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">1913.9999999999998</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">test_camera_field_of_view</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#39; view width 2262.0 millimeter,1913.9999999999998 millimeter&#39;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#34;(&lt;Quantity(2.262, &#39;meter&#39;)&gt;, &lt;Quantity(1.914, &#39;meter&#39;)&gt;)&#34;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">DimensionalityError</span>                       Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/ipykernel_141280/1795685626.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     <span class="ansi-green-fg">assert</span> math<span class="ansi-blue-fg">.</span>isclose<span class="ansi-blue-fg">(</span>fov<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2262</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>mm<span class="ansi-blue-fg">,</span> rel_tol<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1e-6</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>m<span class="ansi-blue-fg">,</span> abs_tol<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0.0</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>m<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>     <span class="ansi-green-fg">assert</span> math<span class="ansi-blue-fg">.</span>isclose<span class="ansi-blue-fg">(</span>fov<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1913.9999999999998</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>mm<span class="ansi-blue-fg">,</span> rel_tol<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1e-6</span><span class="ansi-blue-fg">,</span> abs_tol<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0.0</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 9</span><span class="ansi-red-fg"> </span>test_camera_field_of_view<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/tmp/ipykernel_141280/1795685626.py</span> in <span class="ansi-cyan-fg">test_camera_field_of_view</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     fov <span class="ansi-blue-fg">=</span> mycamera<span class="ansi-blue-fg">.</span>field_of_view<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;{fov}&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">assert</span> math<span class="ansi-blue-fg">.</span>isclose<span class="ansi-blue-fg">(</span>fov<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2262</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>mm<span class="ansi-blue-fg">,</span> rel_tol<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1e-6</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>m<span class="ansi-blue-fg">,</span> abs_tol<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0.0</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>m<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>     <span class="ansi-green-fg">assert</span> math<span class="ansi-blue-fg">.</span>isclose<span class="ansi-blue-fg">(</span>fov<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1913.9999999999998</span><span class="ansi-blue-fg">*</span>ureg<span class="ansi-blue-fg">.</span>mm<span class="ansi-blue-fg">,</span> rel_tol<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1e-6</span><span class="ansi-blue-fg">,</span> abs_tol<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0.0</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span> test_camera_field_of_view<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/opt/conda/lib/python3.8/site-packages/pint/quantity.py</span> in <span class="ansi-cyan-fg">__float__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    895</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>dimensionless<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    896</span>             <span class="ansi-green-fg">return</span> float<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>_convert_magnitude_not_inplace<span class="ansi-blue-fg">(</span>UnitsContainer<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 897</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> DimensionalityError<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>_units<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;dimensionless&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    898</span> 
+<span class="ansi-green-intense-fg ansi-bold">    899</span>     <span class="ansi-green-fg">def</span> __complex__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> complex<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">DimensionalityError</span>: Cannot convert from &#39;meter&#39; to &#39;dimensionless&#39;</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -483,8 +758,9 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 <div class="output_area">
 
 
-<div class="output_html rendered_html output_subarea ">
-40.0 millimeter
+
+<div class="output_text output_subarea ">
+<pre>&#34;(&lt;Quantity(12, &#39;millimeter&#39;)&gt;, &lt;Quantity(44, &#39;millimeter&#39;)&gt;) 17.029386365926403 millimeter --&gt; 45.60701700396552 millimeter&#34;</pre>
 </div>
 
 </div>
@@ -492,15 +768,16 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span></pre>
+<pre><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span></pre>
 </div>
 </div>
 
 <div class="output_area">
 
 
-<div class="output_html rendered_html output_subarea ">
-40.0 millimeter
+
+<div class="output_text output_subarea ">
+<pre>&#34;die size = (&lt;Quantity(13.0, &#39;millimeter&#39;)&gt;, &lt;Quantity(11.0, &#39;millimeter&#39;)&gt;)\n cell size = (&lt;Quantity(2.7, &#39;micrometer&#39;)&gt;, &lt;Quantity(2.7, &#39;micrometer&#39;)&gt;)  &#34;</pre>
 </div>
 
 </div>
@@ -516,7 +793,119 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 
 
 <div class="output_html rendered_html output_subarea ">
-40.0 millimeter
+0.011352924243950934 Circle_of_confusion
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-green-fg">.</span></pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#39; archaic coc = 0.017029386365926404 Circle_of_confusion&#39;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-green-fg">.</span></pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#39; zeiss coc = 0.009843575934061504 Circle_of_confusion&#39;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-green-fg">.</span><span class="ansi-green-fg">.</span></pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<h2>Angle of view</h2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<span>Figures out the witdh of the angle of view, given sensor / lens characteristics.</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_latex output_subarea ">
+$\displaystyle \theta=2\cdot\arctan\left(\frac{h(s-f)}{2sf}\right)$
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<code> angle_of_view(frame_dimension, focal_length, focus_distance)</code>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-green-fg">.</span></pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#39;0.3203741792034056 radian,0.27174389171340224 radian&#39;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-green-fg">.</span></pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>&#39; view width 2262.0 millimeter,1913.9999999999998 millimeter&#39;</pre>
 </div>
 
 </div>
@@ -526,7 +915,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 
 
 <div class="output_text output_subarea ">
-<pre>&#39;focal length used is:40.0 millimeter&#39;</pre>
+<pre>&#34;(&lt;Quantity(2.262, &#39;meter&#39;)&gt;, &lt;Quantity(1.914, &#39;meter&#39;)&gt;)&#34;</pre>
 </div>
 
 </div>
@@ -534,29 +923,12 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-green-fg">.</span><span class="ansi-green-fg">                                                                                     [100%]</span>
-<span class="ansi-green-intense-fg ansi-bold">8 passed</span><span class="ansi-green-fg"> in 1.69s</span>
+<pre><span class="ansi-green-fg">.</span><span class="ansi-green-fg">                                                                                [100%]</span>
+<span class="ansi-green-intense-fg ansi-bold">13 passed</span><span class="ansi-green-fg"> in 4.10s</span>
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
