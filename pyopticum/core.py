@@ -105,8 +105,9 @@ class Lens(Help_system):
             self.focus_distance = 0 * ureg.meters
 
 
+
     @ureg.wraps(None,(None,'mm','Aperture','m'))
-    def __init__(self, focal_length=40*ureg.mm, aperture=2.0*ureg.Aperture, focus_distance=7.0*ureg.meters):
+    def __init__(self, focal_length=40*ureg.mm, aperture=2.0*ureg.Aperture, focus_distance=4.0*ureg.meters):
         # system setup
         self.initialize_help_system()
         self.__dict__['class_preamble'] = self.__class__.__name__
@@ -362,7 +363,7 @@ class Sensor(Help_system):
 
         #if focal_length
         coc = coc_method.get(self.sensor_data.circle_of_confusion_method.lower())(self.sensor_data.diagonal,focal_length)
-        self.sensor_data.circle_of_confusion = (coc.magnitude) * ureg['coc']
+        self.sensor_data.circle_of_confusion = (coc.magnitude) * ureg['mm']
 
     @circle_of_confusion.deleter
     def circle_of_confusion(self):
@@ -433,10 +434,40 @@ class Camera(Help_system):
 
     @ureg.wraps(ureg.meters, (None))
     def hyperfocal_distance(self):
-        this_circle_of_confusion = self.sensor.circle_of_confusion
-        this_fnumber = f_number.aperture
-        hfd = (focal_length*focal_length)/(this_f_number*this_circle_of_confusion)+self.lens.focal_length
-        return hfd
+        # aperture for us is unitless but really is should be in 1/m
+        # TODO fix aperture to be correct units
+        bottom = (1/(self.lens.aperture.magnitude*self.sensor.circle_of_confusion.magnitude))
+        hfd = (pow(self.lens.focal_length.magnitude,2)/(bottom)+self.lens.focal_length.magnitude)
+        return hfd*ureg('m')
+
+    def near_DOF_limit_help(self):
+        print(HTML("<H2>Near Depth of Field</H2>"))
+        print(self.wrap_unit(r"D_{n}=\frac{s(H-f)}{H+s-2f}","Math"))
+
+    @ureg.wraps(ureg.meters,(None))
+    def near_DOF_limit(self):
+        top = self.lens.focus_distance*(self.hyperfocal_distance() -self.lens.focal_length)
+        bottom = self.hyperfocal_distance() + self.lens.focus_distance - 2*self.lens.focal_length
+        return top/bottom
+
+    def far_DOF_limit_help(self):
+        print(HTML("<H2>Far Depth of Field</H2>"))
+        print(self.wrap_unit(r"D_{f}=\frac{s(H-f)}{H-s}","Math"))
+
+    @ureg.wraps(ureg.meters,(None))
+    def far_DOF_limit(self):
+        top = self.lens.focus_distance*(self.hyperfocal_distance() -self.lens.focal_length)
+        bottom = self.hyperfocal_distance() - self.lens.focus_distance
+        return top/bottom
+
+    def DOF_help(self):
+        print(HTML("<H2>Depth of Field</H2>"))
+        print(self.wrap_unit(r"DOF = Far Limit - Near Limt","Math"))
+
+    @ureg.wraps(ureg.meters,(None))
+    def DOF(self):
+        return self.far_DOF_limit() - self.near_DOF_limit()
+
 
 # Cell
 class aPyopticum(Help_system):
