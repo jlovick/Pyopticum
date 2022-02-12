@@ -214,7 +214,7 @@ Using Ipython
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="aPyopticum" class="doc_header"><code>class</code> <code>aPyopticum</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L515" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>aPyopticum</code>(<strong><code>echo_params</code></strong>=<em><code>False</code></em>) :: <a href="/pyopticum/core.html#Help_system"><code>Help_system</code></a></p>
+<h2 id="aPyopticum" class="doc_header"><code>class</code> <code>aPyopticum</code><a href="https://github.com/jlovick/pyopticum/tree/master/pyopticum/core.py#L519" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>aPyopticum</code>(<strong><code>echo_params</code></strong>=<em><code>False</code></em>) :: <a href="/pyopticum/core.html#Help_system"><code>Help_system</code></a></p>
 </blockquote>
 <p>Initial class to hold optical formula's etc</p>
 
@@ -323,26 +323,10 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">mysensor</span><span class="o">.</span><span class="n">die_size</span>  <span class="o">=</span> <span class="p">(</span> <span class="mi">12</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span>  <span class="mi">44</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span>
     <span class="n">db</span> <span class="o">=</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">diagonal</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">die_size</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">da</span><span class="si">}</span><span class="s2"> --&gt; </span><span class="si">{</span><span class="n">db</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">test_sensor_is_behaving</span><span class="p">()</span>
+<span class="c1">#test_sensor_is_behaving()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#34;(&lt;Quantity(12, &#39;millimeter&#39;)&gt;, &lt;Quantity(44, &#39;millimeter&#39;)&gt;) 17.029386365926403 millimeter --&gt; 45.60701700396552 millimeter&#34;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -360,6 +344,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
     <span class="n">mysensor</span><span class="o">.</span><span class="n">pixel_count</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5320</span><span class="p">,</span><span class="mi">4600</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">pixel_count</span> <span class="o">==</span> <span class="p">(</span><span class="mi">5320</span><span class="p">,</span> <span class="mi">4600</span><span class="p">)</span>
+<span class="c1">#test_set_pixel_count()</span>
 </pre></div>
 
     </div>
@@ -378,6 +363,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_can_create_lens</span><span class="p">():</span>
     <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">((</span><span class="mi">40</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span> <span class="p">,(</span><span class="mf">2.4</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">))</span>
+<span class="c1">#test_cantest_can_create_lens()</span>
 </pre></div>
 
     </div>
@@ -397,6 +383,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_cant_create_lens_without_unit</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">Exception</span><span class="p">)</span> <span class="k">as</span> <span class="n">e_info</span><span class="p">:</span>
         <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mf">2.4</span><span class="p">)</span>
+<span class="c1">#test_cant_create_lens_without_unit()</span>
 </pre></div>
 
     </div>
@@ -416,6 +403,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_focal_length_has_mm_units</span><span class="p">():</span>
     <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">((</span><span class="mi">40</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span> <span class="p">,(</span><span class="mf">2.4</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">))</span>
     <span class="k">assert</span> <span class="n">mylens</span><span class="o">.</span><span class="n">focal_length</span> <span class="o">==</span> <span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span>
+<span class="c1">#test_focal_length_has_mm_units()</span>
 </pre></div>
 
     </div>
@@ -434,6 +422,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_can_create_sensor</span><span class="p">():</span>
     <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
+<span class="c1">#test_can_create_sensor()</span>
 </pre></div>
 
     </div>
@@ -453,28 +442,12 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_sensor_diagonal</span><span class="p">():</span>
     <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;die size = </span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">die_size</span><span class="si">}</span><span class="se">\n</span><span class="s2"> cell size = </span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">pixel_size</span><span class="si">}</span><span class="s2">  &quot;</span><span class="p">)</span>
-    
-    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">diagonal</span> <span class="o">==</span> <span class="mf">17.029386365926403</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span>
-<span class="n">test_sensor_diagonal</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">diagonal</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;[length]&#39;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">mysensor</span><span class="o">.</span><span class="n">diagonal</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span><span class="mf">17.029386365926403</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abs_tol</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="c1">#test_sensor_diagonal()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#34;die size = (&lt;Quantity(13.0, &#39;millimeter&#39;)&gt;, &lt;Quantity(11.0, &#39;millimeter&#39;)&gt;)\n cell size = (&lt;Quantity(2.7, &#39;micrometer&#39;)&gt;, &lt;Quantity(2.7, &#39;micrometer&#39;)&gt;)  &#34;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -491,27 +464,12 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_circle_of_confusion_default</span><span class="p">():</span>
     <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span> <span class="o">==</span> <span class="p">(</span><span class="mf">0.011352924243950934</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span>
-    
-<span class="n">test_circle_of_confusion_default</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;[length]&#39;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="o">.</span><span class="n">magnitude</span> <span class="p">,</span> <span class="p">(</span><span class="mf">0.011352924243950934</span> <span class="p">),</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abs_tol</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span>  
+<span class="c1">#test_circle_of_confusion_default()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-0.011352924243950934 millimeter
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -530,28 +488,12 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">((</span><span class="mi">40</span> <span class="o">*</span> <span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">)</span> <span class="p">,(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">))</span>
     <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion_method</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;archaic&quot;</span><span class="p">,</span> <span class="n">mylens</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; archaic coc = </span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span> <span class="o">==</span> <span class="mf">0.017029386365926404</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span>
-
-<span class="n">test_archaic_circle_of_confusion</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;[length]&#39;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="o">.</span><span class="n">magnitude</span> <span class="p">,</span> <span class="mf">0.017029386365926404</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abs_tol</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="c1">#test_archaic_circle_of_confusion()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#39; archaic coc = 0.017029386365926404 millimeter&#39;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -569,27 +511,12 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
     <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion_method</span> <span class="o">=</span> <span class="s2">&quot;zeiss&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; zeiss coc = </span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span> <span class="o">==</span> <span class="mf">0.009843575934061504</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span>
-<span class="n">test_zeiss_circle_of_confusion</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;[length]&#39;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">mysensor</span><span class="o">.</span><span class="n">circle_of_confusion</span><span class="o">.</span><span class="n">magnitude</span> <span class="p">,</span> <span class="mf">0.009843575934061504</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abs_tol</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="c1">#test_zeiss_circle_of_confusion()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#39; zeiss coc = 0.009843575934061504 millimeter&#39;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -607,9 +534,36 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">mylens</span> <span class="o">=</span> <span class="n">Lens</span><span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">Aperture</span><span class="p">)</span>
     <span class="n">mysensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span><span class="mi">11</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">mm</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">,</span> <span class="mf">2.7</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">micrometer</span><span class="p">)</span>
     <span class="n">mycamera</span> <span class="o">=</span> <span class="n">Camera</span><span class="p">(</span><span class="n">sensor</span> <span class="o">=</span> <span class="n">mysensor</span><span class="p">,</span> <span class="n">lens</span> <span class="o">=</span> <span class="n">mylens</span><span class="p">)</span>
+    <span class="n">mycamera</span><span class="o">.</span><span class="n">help</span><span class="p">(</span><span class="s2">&quot;GSD&quot;</span><span class="p">)</span>
+<span class="n">test_can_create_camera</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<H2>GSD, Geospatial Sampling Distance</H2>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_latex output_subarea ">
+$\displaystyle GSD=\frac{Field\ of\ View}{Number\ of\ Pixels}$
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -652,6 +606,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">horizontal_aov</span><span class="p">,</span> <span class="mf">0.32037417920340566</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">radians</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abs_tol</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">vertical_aov</span><span class="p">,</span> <span class="mf">0.27174389171340224</span><span class="o">*</span><span class="n">ureg</span><span class="o">.</span><span class="n">radians</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span><span class="n">abs_tol</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">horizontal_aov</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">vertical_aov</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1">#test_camera_angle_of_view()</span>
 </pre></div>
 
     </div>
@@ -676,36 +631,10 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fov</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">fov</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span> <span class="mf">2.262</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">fov</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span> <span class="mf">1.9139999999999998</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
-<span class="n">test_camera_field_of_view</span><span class="p">()</span>
+<span class="c1">#test_camera_field_of_view()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#39; field of view : 2262.0 millimeter,1913.9999999999998 millimeter&#39;</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#34;(&lt;Quantity(2.262, &#39;meter&#39;)&gt;, &lt;Quantity(1.914, &#39;meter&#39;)&gt;)&#34;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -727,6 +656,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">hyper_distance</span> <span class="o">=</span><span class="n">mycamera</span><span class="o">.</span><span class="n">hyperfocal_distance</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">hyper_distance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">hyper_distance</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,(</span><span class="mf">76.32935</span><span class="p">),</span><span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span><span class="n">abs_tol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="c1">#test_camtest_camera_hyperfocal_distance()</span>
 </pre></div>
 
     </div>
@@ -751,6 +681,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">nfd</span>  <span class="o">=</span> <span class="n">mycamera</span><span class="o">.</span><span class="n">near_DOF_limit</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nfd</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">nfd</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span><span class="mf">3.8026</span><span class="p">,</span> <span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="c1">#test_camera_near_focal_distance()</span>
 </pre></div>
 
     </div>
@@ -775,6 +706,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">ffd</span>  <span class="o">=</span> <span class="n">mycamera</span><span class="o">.</span><span class="n">far_DOF_limit</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ffd</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">ffd</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span><span class="mf">4.218998</span><span class="p">,</span> <span class="n">rel_tol</span> <span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="c1">#test_camera_far_focal_distance()</span>
 </pre></div>
 
     </div>
@@ -799,6 +731,7 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">dof</span>  <span class="o">=</span> <span class="n">mycamera</span><span class="o">.</span><span class="n">DOF</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dof</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">dof</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span><span class="mf">0.416382</span><span class="p">,</span><span class="n">rel_tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="c1">#test_camera_DOF()</span>
 </pre></div>
 
     </div>
@@ -826,128 +759,10 @@ see <a href='https://github.com/jlovick/Pyopticum'> Pyopticum </a> for source
     <span class="n">mycamera</span> <span class="o">=</span> <span class="n">Camera</span><span class="p">(</span><span class="n">sensor</span> <span class="o">=</span> <span class="n">mysensor</span><span class="p">,</span> <span class="n">lens</span> <span class="o">=</span> <span class="n">mylens</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; pixel count :--&gt; </span><span class="si">{</span><span class="n">mysensor</span><span class="o">.</span><span class="n">pixel_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; GSD --&gt; </span><span class="si">{</span><span class="n">mycamera</span><span class="o">.</span><span class="n">GSD</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">test_gsd</span><span class="p">()</span>
+<span class="c1">#test_gsd()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<span> using pixel size cell (2.7 micrometer,2.7 micrometer) </span>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<span> set die size to (0.014364 meter,0.01242 meter) </span>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<span> pixel size cell (2.7 micrometer,2.7 micrometer) </span>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<span> pixel count (5320,4600) </span>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<span> die size (0.014364 meter,0.01242 meter) </span>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<span> Die Diagonal 19.1049731745428 millimeter </span>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<span> circle of confusion 0.012736648783028532 millimeter </span>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<span> circle of confusion method Modern </span>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#39; field of view : 2499.336 millimeter,2161.0800000000004 millimeter&#39;</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#39; pixel count :--&gt; (5320, 4600)&#39;</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#39; field of view : 2499.336 millimeter,2161.0800000000004 millimeter&#39;</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea ">
-<pre>&#34; GSD --&gt; (&lt;Quantity(0.4698, &#39;millimeter&#39;)&gt;, &lt;Quantity(0.4698, &#39;millimeter&#39;)&gt;)&#34;</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -1367,7 +1182,7 @@ $\displaystyle \theta=2\cdot\arctan\left(\frac{h(s-f)}{2sf}\right)$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><span class="ansi-green-fg">.</span><span class="ansi-green-fg">                                                                          [100%]</span>
-<span class="ansi-green-intense-fg ansi-bold">19 passed</span><span class="ansi-green-fg"> in 7.87s</span>
+<span class="ansi-green-intense-fg ansi-bold">19 passed</span><span class="ansi-green-fg"> in 8.00s</span>
 </pre>
 </div>
 </div>

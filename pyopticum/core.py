@@ -504,6 +504,10 @@ class Camera(Help_system):
     def DOF(self):
         return self.far_DOF_limit() - self.near_DOF_limit()
 
+    def GSD_help(self):
+        print(HTML("<H2>GSD, Geospatial Sampling Distance</H2>"))
+        print(self.wrap_unit(r"GSD=\frac{Field\ of\ View}{Number\ of\ Pixels}","Math"))
+
     @ureg.wraps((ureg.mm, ureg.mm), (None))
     def GSD(self):
         self.field_of_view()
